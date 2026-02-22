@@ -19,27 +19,33 @@ const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
 	const [resolvedTheme, setResolvedTheme] = useState<"light" | "dark">("light");
 	const [mounted, setMounted] = useState(false);
 
-	// Carregar tema salvo do localStorage e aplicar imediatamente
+	// Carregar tema salvo do localStorage
 	useEffect(() => {
 		const savedTheme = localStorage.getItem("theme") as Theme;
 		if (savedTheme && ["light", "dark", "system"].includes(savedTheme)) {
 			setTheme(savedTheme);
 		}
 		
-		// Aplicar tema imediatamente para evitar flicker
+		// Verificar tema já aplicado pelo script inline (para evitar re-aplicação)
 		const root = document.documentElement;
-		root.classList.remove("light", "dark");
+		const currentTheme = root.classList.contains("dark") ? "dark" : "light";
 		
-		let initialTheme: "light" | "dark";
-		if (savedTheme === "system" || !savedTheme) {
-			const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-			initialTheme = systemPrefersDark ? "dark" : "light";
+		// Só aplicar se ainda não estiver aplicado (fallback de segurança)
+		if (!root.classList.contains("light") && !root.classList.contains("dark")) {
+			let initialTheme: "light" | "dark";
+			if (savedTheme === "system" || !savedTheme) {
+				const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+				initialTheme = systemPrefersDark ? "dark" : "light";
+			} else {
+				initialTheme = savedTheme;
+			}
+			
+			root.classList.add(initialTheme);
+			setResolvedTheme(initialTheme);
 		} else {
-			initialTheme = savedTheme;
+			setResolvedTheme(currentTheme);
 		}
 		
-		root.classList.add(initialTheme);
-		setResolvedTheme(initialTheme);
 		setMounted(true);
 	}, []);
 
