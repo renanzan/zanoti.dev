@@ -37,7 +37,31 @@ const nextConfig: NextConfig = {
 	turbopack: {
 		rules: {
 			"*.svg": {
-				loaders: ["@svgr/webpack"],
+				loaders: [
+					{
+						loader: "@svgr/webpack",
+						options: {
+							dimensions: true,
+							replaceAttrValues: {
+								"#000": "currentColor",
+								"#000000": "currentColor",
+								black: "currentColor"
+							},
+							svgoConfig: {
+								plugins: [
+									{
+										name: "preset-default",
+										params: {
+											overrides: {
+												removeViewBox: false
+											}
+										}
+									}
+								]
+							}
+						}
+					}
+				],
 				as: "*.js"
 			}
 		}
