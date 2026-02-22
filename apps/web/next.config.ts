@@ -13,69 +13,6 @@ const nextConfig: NextConfig = {
 		remotePatterns: []
 	},
 
-	webpack: (config, { dev }) => {
-		// Configuração SVG com SVGR
-		// Remove a regra padrão do Next.js para SVGs
-		const fileLoaderRule = config.module.rules.find(
-			(rule: unknown): rule is { test: RegExp; exclude?: RegExp } => {
-				if (rule === "..." || typeof rule !== "object" || rule === null) {
-					return false;
-				}
-				return (
-					"test" in rule &&
-					rule.test instanceof RegExp &&
-					rule.test.test(".svg")
-				);
-			}
-		);
-		if (fileLoaderRule) {
-			fileLoaderRule.exclude = /\.svg$/i;
-		}
-
-		// Adiciona regra para processar SVGs como componentes React
-		config.module.rules.push({
-			test: /\.svg$/i,
-			issuer: fileLoaderRule ? undefined : /\.[jt]sx?$/,
-			use: [
-				{
-					loader: "@svgr/webpack",
-					options: {
-						dimensions: true, // Mantém width/height dos SVGs
-						// Substitui valores de fill e stroke por currentColor para permitir customização via className
-						replaceAttrValues: {
-							"#000": "currentColor",
-							"#000000": "currentColor",
-							black: "currentColor"
-						},
-						svgoConfig: {
-							plugins: [
-								{
-									name: "preset-default",
-									params: {
-										overrides: {
-											removeViewBox: false
-										}
-									}
-								}
-							]
-						}
-					}
-				}
-			]
-		});
-
-		// Otimizações para desenvolvimento (hot reload mais rápido)
-		if (dev) {
-			// Otimiza resolução de módulos para packages locais
-			config.resolve.extensionAlias = {
-				".js": [".js", ".ts", ".tsx"],
-				".jsx": [".jsx", ".tsx"]
-			};
-		}
-
-		return config;
-	},
-
 	async rewrites() {
 		return [
 			{
@@ -96,8 +33,15 @@ const nextConfig: NextConfig = {
 	// This is required to support PostHog trailing slash API requests
 	skipTrailingSlashRedirect: true,
 
-	// Configuração Turbopack (vazia para usar webpack em produção)
-	turbopack: {},
+	// Configuração Turbopack para processar SVGs como componentes React
+	turbopack: {
+		rules: {
+			"*.svg": {
+				loaders: ["@svgr/webpack"],
+				as: "*.js"
+			}
+		}
+	},
 
 	// Configuração para monorepo - define o diretório raiz para rastreamento de arquivos
 	outputFileTracingRoot: path.join(__dirname, "../..")
