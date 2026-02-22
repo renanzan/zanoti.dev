@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
+import posthog from "posthog-js";
 
 import type { FC, PropsWithChildren } from "react";
 
@@ -28,6 +29,7 @@ const QuickAccessProvider: FC<PropsWithChildren> = ({ children }) => {
 			) {
 				event.preventDefault();
 				setOpen(true);
+				posthog.capture("quick_access_opened", { trigger: "keyboard_shortcut" });
 			}
 		};
 

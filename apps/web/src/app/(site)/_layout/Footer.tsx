@@ -1,22 +1,12 @@
 import { footerInfo } from "@/constants/info";
 import { learnLinks, workLinks } from "@/constants/links";
-import GithubIcon from "@/public/icons/sites/github.svg";
-import TwitterIcon from "@/public/icons/sites/twitter.svg";
 import clsx from "clsx";
 import Link from "next/link";
 
-import type { FC } from "react";
+import { FooterGithubLink } from "./FooterGithubLink";
+import { FooterSocialLinks } from "./FooterSocialLinks";
 
-const LastUpdate = () => (
-	<a
-		href="https://github.com/renanzan/zanoti.dev"
-		target="_blank"
-		rel="noreferrer nofollow"
-		className={clsx("hover:underline")}
-	>
-		<span>veja a atualização recente no GitHub</span>
-	</a>
-);
+import type { FC } from "react";
 
 type FooterLinkProps = {
 	title: string;
@@ -103,32 +93,7 @@ const FooterDescription: FC = () => (
 		<p className={clsx("mb-4 font-normal leading-relaxed")}>
 			{footerInfo.aboutMe}
 		</p>
-		<ul className={clsx("-ml-2 flex gap-1")}>
-			<li>
-				<a
-					href="https://twitter.com/renan_zanoti"
-					target="_blank"
-					rel="noreferrer nofollow"
-					className={clsx("flex h-9 w-9 items-center justify-center")}
-					aria-label="My Twitter profile"
-					title="My Twitter profile"
-				>
-					<TwitterIcon className="h-5 w-5 text-slate-700 dark:text-slate-300" />
-				</a>
-			</li>
-			<li>
-				<a
-					href="https://github.com/renanzan"
-					target="_blank"
-					rel="noreferrer nofollow"
-					className={clsx("flex h-9 w-9 items-center justify-center")}
-					aria-label="My GitHub profile"
-					title="My GitHub profile"
-				>
-					<GithubIcon className="h-5 w-5 text-slate-700 dark:text-slate-300" />
-				</a>
-			</li>
-		</ul>
+		<FooterSocialLinks />
 	</div>
 );
 
@@ -188,7 +153,7 @@ const Footer: FC = () => (
 					&copy; {new Date().getFullYear()}, Renan Zanoti
 				</div>
 				<div className={clsx("text-slate-500", "dark:text-slate-400")}>
-					<LastUpdate />
+					<FooterGithubLink />
 				</div>
 			</div>
 		</div>

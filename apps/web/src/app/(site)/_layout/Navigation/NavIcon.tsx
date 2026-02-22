@@ -1,19 +1,21 @@
 import clsx from "clsx";
 
-import type { FC, ReactElement } from "react";
+import type { FC, MouseEventHandler, ReactElement } from "react";
 
 type NavIconProps = {
 	href: string;
 	icon: ReactElement;
 	title: string;
 	label?: string;
+	onClick?: MouseEventHandler<HTMLAnchorElement>;
 };
 
 export const NavIcon: FC<NavIconProps> = ({
 	href,
 	icon,
 	title,
-	label = ""
+	label = "",
+	onClick
 }) => (
 	<a
 		href={href}
@@ -34,6 +36,7 @@ export const NavIcon: FC<NavIconProps> = ({
 		title={`My ${title} profile`}
 		target="_blank"
 		rel="noreferrer nofollow"
+		onClick={onClick}
 	>
 		<span
 			className={clsx("flex h-9 w-9 items-center justify-center rounded-xl")}

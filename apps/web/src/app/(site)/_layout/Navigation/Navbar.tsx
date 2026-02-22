@@ -6,6 +6,7 @@ import { useOnScroll } from "@/hooks/useOnScroll";
 import Logo from "@/public/icons/logo.svg";
 import clsx from "clsx";
 import Link from "next/link";
+import posthog from "posthog-js";
 
 import { NavIcon } from "./NavIcon";
 import { NavLinkDropdown } from "./NavLinkDropdown";
@@ -75,6 +76,13 @@ export const Navbar = () => {
 										<Icon className="h-5 w-5 text-slate-700 dark:text-slate-300" />
 									}
 									title={title}
+									onClick={() =>
+										posthog.capture("social_link_clicked", {
+											platform: title,
+											destination: href,
+											location: "navbar"
+										})
+									}
 								/>
 							</li>
 						))}
