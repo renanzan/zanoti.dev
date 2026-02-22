@@ -1,0 +1,10 @@
+{
+	"recommendations": [
+		"PKief.material-icon-theme",
+		"dbaeumer.vscode-eslint",
+		"esbenp.prettier-vscode",
+		"vivaxy.vscode-conventional-commits",
+		"lokalise.i18n-ally",
+		"EcksDy.env-switcher"
+	]
+}

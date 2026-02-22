@@ -1,0 +1,37 @@
+{
+	"name": "@renanzan/zanoti.dev",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"build": "next build --webpack",
+		"dev": "next dev --webpack",
+		"lint": "next lint",
+		"start": "next start"
+	},
+	"dependencies": {
+		"@headlessui/react": "^2.2.9",
+		"clsx": "^2.1.1",
+		"framer-motion": "^12.34.2",
+		"lucide-react": "catalog:",
+		"next": "catalog:",
+		"posthog-js": "^1.351.0",
+		"react": "catalog:",
+		"react-dom": "catalog:",
+		"vivus": "^0.4.6"
+	},
+	"devDependencies": {
+		"@eslint/eslintrc": "^3.3.3",
+		"@svgr/webpack": "^8.1.0",
+		"@types/node": "catalog:",
+		"@types/react": "catalog:",
+		"@types/react-dom": "catalog:",
+		"@types/vivus": "^0.4.7",
+		"autoprefixer": "^10.4.20",
+		"eslint": "^10.0.1",
+		"eslint-config-next": "16.1.6",
+		"postcss": "^8.4.47",
+		"tailwindcss": "3.4.19",
+		"typescript": "catalog:"
+	},
+	"packageManager": "pnpm@10.18.1+sha512.77a884a165cbba2d8d1c19e3b4880eee6d2fcabd0d879121e282196b80042351d5eb3ca0935fa599da1dc51265cc68816ad2bddd2a2de5ea9fdf92adbec7cd34"
+}

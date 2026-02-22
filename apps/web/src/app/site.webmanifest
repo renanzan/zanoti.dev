@@ -1,0 +1,19 @@
+{
+    "name": "zanoti.dev",
+    "short_name": "zanoti.dev",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#56ab91",
+    "background_color": "#56ab91",
+    "display": "standalone"
+}

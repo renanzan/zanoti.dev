@@ -1,0 +1,29 @@
+{
+	"extends": "../../tsconfig.base.json",
+	"compilerOptions": {
+		"lib": ["dom", "dom.iterable", "ES2022"],
+		"noEmit": true,
+		"jsx": "preserve",
+		"plugins": [
+			{
+				"name": "next"
+			}
+		],
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["./src/*"],
+			"@/public/*": ["./public/*"]
+		},
+		"tsBuildInfoFile": ".next/tsconfig.tsbuildinfo",
+		"incremental": true
+	},
+	"include": [
+		"**/*.ts",
+		"**/*.tsx",
+		".next/types/**/*.ts",
+		"next-env.d.ts",
+		"types/**/*.ts",
+		"types/**/*.d.ts"
+	],
+	"exclude": ["node_modules", ".next", "dist", "**/*.tsbuildinfo"]
+}

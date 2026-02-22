@@ -1,0 +1,70 @@
+{
+	"editor.formatOnSave": true,
+	"editor.tabSize": 2,
+	"editor.insertSpaces": false,
+	"editor.detectIndentation": false,
+	"explorer.compactFolders": false,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnSaveMode": "file",
+	"editor.rulers": [80],
+	"editor.codeActionsOnSave": {
+		"source.organizeImports": "explicit"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.formatOnSave": true,
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": "explicit"
+		}
+	},
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.formatOnSave": true,
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": "explicit"
+		}
+	},
+	"[tsx]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.formatOnSave": true,
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": "explicit"
+		}
+	},
+	"prettier.requireConfig": true,
+	"prettier.resolveGlobalModules": true,
+	"prettier.enable": true,
+	// Prettier procura automaticamente .prettierrc.* na hierarquia de pastas
+	// Não precisa especificar configPath em monorepos - ele encontra a config mais próxima
+	"prettier.ignorePath": ".prettierignore",
+	"prettier.useEditorConfig": false,
+	// Garante que o Prettier use a configuração mais próxima do arquivo
+	"prettier.documentSelectors": ["**/*.{js,jsx,ts,tsx,json,css,scss,md}"],
+	"typescript.format.enable": false,
+	"javascript.format.enable": false,
+	// TypeScript SDK - aponta para a instalação na raiz do monorepo
+	"typescript.tsdk": "./node_modules/typescript/lib",
+	"typescript.enablePromptUseWorkspaceTsdk": true,
+	// Garante que o TypeScript use a versão do workspace
+	"typescript.preferences.useAliasesForRenames": false,
+	"conventionalCommits.promptBody": false,
+	"conventionalCommits.showNewVersionNotes": false,
+	"conventionalCommits.promptFooter": false,
+	"conventionalCommits.promptScopes": false,
+	"conventionalCommits.promptCI": false,
+	"files.exclude": {
+		"**/node_modules": true,
+		"**/.prettierignore": true,
+		"**/.prettierrc.json": true,
+		"**/.eslintignore": true,
+		"**/.eslintrc.json": true,
+		"**/.gitignore": true,
+		"**/.next": true,
+		"**/next-env.d.ts": true,
+		"**/next.config.js": true,
+		"**/postcss.config.js": true
+	},
+	"tailwindCSS.experimental.classRegex": [
+		["cc\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+	]
+}
