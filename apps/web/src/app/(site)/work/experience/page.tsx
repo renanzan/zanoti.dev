@@ -1,7 +1,7 @@
-import ContentPage from "@/components/ContentPage";
-import { H2, H3 } from "@/components/content/Heading";
+import { H2 } from "@/components/content/Heading";
 import { Hr } from "@/components/content/Hr";
 import { Link } from "@/components/content/Link";
+import ContentPage from "@/components/ContentPage";
 import { generateMetadata } from "@/helpers/seo";
 
 export const metadata = generateMetadata({
@@ -14,173 +14,199 @@ export const metadata = generateMetadata({
 const frontMatter = {
 	title: "Experiência",
 	description:
-		"Trajetória profissional como Desenvolvedor Front-End: de júnior a sênior especializado em migração de sistemas legados.",
+		"Trajetória como Desenvolvedor Frontend, evoluindo de projetos com alta complexidade de interface até atuação em arquitetura de sistemas e padronização entre múltiplas aplicações.",
 	caption: "Profissional"
 };
 
 const Page = () => (
 	<ContentPage frontMatter={frontMatter}>
 		<p>
-			<strong>5+ anos</strong> de experiência em desenvolvimento front-end.
-			Evolução de desenvolvedor júnior para <strong>sênior</strong>,
-			especializado em migração de sistemas legados e liderança de equipes.
+			Experiência com desenvolvimento frontend em diferentes contextos: produtos
+			com lógica complexa, sistemas legados com restrições técnicas e
+			plataformas em escala com múltiplos clientes e aplicações.
 		</p>
 
 		<Hr />
 
-		<H2>Trabalho profissional</H2>
-
-		<H3>
+		<H2>
 			<Link href="/companies/incentiv">Incentiv</Link>
-		</H3>
+		</H2>
 
 		<p>
 			<strong>Tech Lead Front-End</strong> (set 2023 · Atualmente)
 		</p>
 
 		<p>
-			Liderança técnica do front-end em múltiplas aplicações voltadas a projetos
-			sociais. Foco em design system, bibliotecas internas, DX e mentoria de
-			equipe.
-		</p>
-
-		<p>
-			<strong>Principais realizações:</strong>
+			Atuação na estruturação do frontend de múltiplos produtos com foco em
+			arquitetura, escalabilidade e padronização entre aplicações.
 		</p>
 
 		<p>
 			<strong>🎨 Design System & Biblioteca de Componentes</strong>
 		</p>
 		<ul>
-			<li>Design system usado em 8+ aplicações</li>
-			<li>Biblioteca publicada no GitHub Packages</li>
-			<li>Redução de 60% no tempo de desenvolvimento</li>
+			<li>Estruturei design system utilizado em múltiplas aplicações</li>
+			<li>Publiquei biblioteca de componentes como pacote privado</li>
+			<li>
+				Reduzi inconsistências de interface e aumentei reutilização entre
+				produtos
+			</li>
 		</ul>
 
 		<p>
 			<strong>⚡ Developer Experience</strong>
 		</p>
 		<ul>
-			<li>Boilerplates Next.js e ferramentas CLI</li>
-			<li>Melhoria de 40% na velocidade de setup de projetos</li>
+			<li>Desenvolvi boilerplates em Next.js e ferramentas CLI internas</li>
+			<li>Padronizei setup de projetos e organização inicial</li>
+			<li>Reduzi tempo de onboarding e criação de novas aplicações</li>
 		</ul>
 
 		<p>
 			<strong>🏗️ Plataforma Conecta</strong>
 		</p>
 		<ul>
-			<li>Liderança técnica da plataforma principal</li>
-			<li>Migração de componentes legados para design system moderno</li>
+			<li>Liderei tecnicamente a principal plataforma do produto</li>
+			<li>
+				Estruturei frontend para suportar múltiplos perfis e fluxos complexos
+			</li>
+			<li>
+				Migrei componentes legados para uma base padronizada com design system
+			</li>
 		</ul>
 
 		<p>
 			<strong>👥 Liderança & Mentoria</strong>
 		</p>
 		<ul>
-			<li>Gestão de equipe de 4 desenvolvedores</li>
-			<li>Mentoria técnica e processos de qualidade</li>
+			<li>Liderei equipe com 4 desenvolvedores frontend</li>
+			<li>Conduzi revisões de código e defini padrões técnicos</li>
+			<li>Atuei na evolução da qualidade e consistência das entregas</li>
 		</ul>
 
-		<H3>
+		<Hr />
+
+		<H2>
 			<Link href="/companies/adseleto">AdSeleto</Link>
-		</H3>
+		</H2>
 
 		<p>
 			<strong>Desenvolvedor Front-End Sênior</strong> (nov 2024 · mai 2025)
 		</p>
 
-		<p>Reconstrução do SaaS AutoPilot™ com nova arquitetura em Next.js 15.</p>
+		<p>
+			Atuação na reestruturação do frontend do core de um SaaS, preparando a
+			base para evolução como hub de múltiplas soluções.
+		</p>
 
 		<p>
 			<strong>Principais realizações:</strong>
 		</p>
 
 		<p>
-			<strong>🚀 AutoPilot™ - Reconstrução Completa</strong>
+			<strong>🧩 Reestruturação do Frontend (HUB AdSeleto)</strong>
 		</p>
 		<ul>
-			<li>Reescrita do SaaS com Next.js 15 e App Router</li>
-			<li>Melhoria de 70% na performance</li>
+			<li>
+				Reestruturei o frontend do core do produto, preparando a base para
+				evolução como hub
+			</li>
+			<li>
+				Organizei arquitetura para suportar múltiplos módulos com consistência
+			</li>
+			<li>Reduzi inconsistências e aumentei previsibilidade na manutenção</li>
 		</ul>
 
 		<p>
-			<strong>🎨 Design System & Acessibilidade</strong>
+			<strong>🎨 Design System & Padronização</strong>
 		</p>
 		<ul>
-			<li>Biblioteca de componentes acessíveis (WCAG 2.1)</li>
-			<li>Sistema de design com Tailwind CSS e Radix UI</li>
+			<li>Estruturei design system com publicação de pacotes privados</li>
+			<li>
+				Padronizei componentes e interface entre diferentes partes do sistema
+			</li>
+			<li>Documentei biblioteca com foco em reutilização e consistência</li>
 		</ul>
 
 		<p>
-			<strong>🔐 Autenticação & Segurança</strong>
+			<strong>🔐 Autenticação & Integração</strong>
 		</p>
 		<ul>
-			<li>Integração com Keycloak para SSO</li>
-			<li>Gestão de roles e permissões</li>
+			<li>Implementei autenticação centralizada com Keycloak</li>
+			<li>
+				Estruturei fluxo de autenticação reutilizável para aplicações Next.js
+			</li>
+			<li>Reduzi complexidade na integração entre módulos e serviços</li>
 		</ul>
 
 		<p>
-			<strong>⚙️ Developer Experience</strong>
+			<strong>⚙️ Qualidade & Organização</strong>
 		</p>
 		<ul>
-			<li>Ferramentas CLI e pipelines CI/CD</li>
-			<li>Testes automatizados e documentação técnica</li>
+			<li>Defini padrões de código e organização entre módulos</li>
+			<li>Atuei na melhoria da qualidade técnica e legibilidade do código</li>
+			<li>Estruturei base mais previsível para evolução contínua do produto</li>
 		</ul>
 
 		<Hr />
 
-		<H3>
+		<H2>
 			<Link href="/companies/uol">UOL - Universo Online</Link>
-		</H3>
+		</H2>
 
 		<p>
 			<strong>Desenvolvedor Front-End Sênior</strong> (ago 2022 · out 2023 · 1
 			ano e 3 meses)
 		</p>
 
-		<p>Desenvolvimento do sistema PMD em React integrado ao SharePoint.</p>
+		<p>
+			Atuação em sistema interno de RH com forte legado, rodando em ambiente
+			restrito baseado em SharePoint.
+		</p>
 
 		<p>
 			<strong>Principais realizações:</strong>
 		</p>
 
 		<p>
-			<strong>📊 Sistema PMD</strong>
+			<strong>🏢 Sistema Corporativo (CVV)</strong>
 		</p>
 		<ul>
-			<li>Dashboard completo para gestão de projetos</li>
-			<li>Integração com SharePoint e Microsoft Graph</li>
+			<li>
+				Atuei na evolução de sistema interno de RH com regras de negócio
+				complexas
+			</li>
+			<li>
+				Trabalhei em fluxos com múltiplos estados e dependências entre etapas
+			</li>
+			<li>Contribuí para melhoria da organização e manutenção do sistema</li>
 		</ul>
 
 		<p>
-			<strong>🎨 Design System UOL</strong>
+			<strong>⚠️ Ambiente Restrito (SharePoint)</strong>
 		</p>
 		<ul>
-			<li>Biblioteca adotada por 12+ squads</li>
-			<li>Redução de 50% no tempo de desenvolvimento</li>
+			<li>Desenvolvi em ambiente com restrições técnicas de SharePoint </li>
+			<li>
+				Adaptei soluções modernas para versões limitadas de React e bibliotecas
+			</li>
+			<li>Tomei decisões pragmáticas considerando limitações do ambiente</li>
 		</ul>
 
 		<p>
-			<strong>🔄 Migração de Sistemas Legados</strong>
+			<strong>🧱 Padronização de Interface</strong>
 		</p>
 		<ul>
-			<li>Modernização de ASP.NET para React</li>
-			<li>Melhoria de 45% na performance</li>
-		</ul>
-
-		<p>
-			<strong>⚡ Performance</strong>
-		</p>
-		<ul>
-			<li>Redução de 60% no tempo de carregamento</li>
-			<li>Otimizações de bundle e cache inteligente</li>
+			<li>Estruturei componentes reutilizáveis para reduzir inconsistência</li>
+			<li>Melhorei organização do frontend em um sistema legado</li>
+			<li>Contribuí para maior previsibilidade na evolução da interface</li>
 		</ul>
 
 		<Hr />
 
-		<H3>
+		<H2>
 			<Link href="/companies/mentora">Mentora</Link>
-		</H3>
+		</H2>
 
 		<p>
 			<strong>Desenvolvedor Front-End Pleno</strong> (abr 2022 · set 2022 · 6
@@ -188,44 +214,52 @@ const Page = () => (
 		</p>
 
 		<p>
-			Criação de interface para plataforma de campeonatos digitais com
-			criptomoedas.
+			Atuação na construção de uma plataforma de competições com integração Web3
+			e lógica de saldo.
 		</p>
 
 		<p>
-			<strong>Principais realizações:</strong>
-		</p>
-
-		<p>
-			<strong>🏆 Plataforma de Campeonatos Digitais</strong>
+			<strong>🕹 Plataforma Web3 (mentora.gg)</strong>
 		</p>
 		<ul>
-			<li>Interface completa para torneios de e-sports</li>
-			<li>Dashboard de resultados em tempo real</li>
+			<li>
+				Desenvolvi frontend do zero para plataforma de competições em e-sports
+			</li>
+			<li>
+				Estruturei aplicação com foco em organização e evolução do produto
+			</li>
+			<li>Modelei fluxos envolvendo competição, saldo e interação com Web3</li>
+			<li>Modelei fluxos envolvendo competição, saldo e interação com Web3</li>
 		</ul>
 
 		<p>
-			<strong>🔗 Integração Web3 & Blockchain</strong>
+			<strong>🔗 Integração com Web3</strong>
 		</p>
 		<ul>
-			<li>Autenticação via MetaMask</li>
-			<li>Integração com contratos inteligentes Ethereum</li>
-			<li>Sistema de pagamentos em criptomoedas</li>
+			<li>Implementei autenticação via carteira com MetaMask </li>
+			<li>Integrei frontend com lógica baseada em blockchain</li>
+			<li>Trabalhei na comunicação entre interface e eventos externos</li>
 		</ul>
 
 		<p>
-			<strong>📱 Performance & UX</strong>
+			<strong>🔄 Estado & Consistência</strong>
 		</p>
 		<ul>
-			<li>PWA com cache offline</li>
-			<li>Redução de 40% no tempo de carregamento</li>
+			<li>
+				Estruturei gerenciamento de estado para lidar com saldo e transações
+			</li>
+			<li>Garanti consistência da interface em cenários assíncronos</li>
+			<li>
+				Modelei comportamento da aplicação considerando múltiplas fontes de
+				evento
+			</li>
 		</ul>
 
 		<Hr />
 
-		<H3>
+		<H2>
 			<Link href="/companies/clipping-cacd">Clipping CACD</Link>
-		</H3>
+		</H2>
 
 		<p>
 			<strong>Desenvolvedor Front-End Júnior → Pleno</strong> (mai 2019 · jul
@@ -233,37 +267,46 @@ const Page = () => (
 		</p>
 
 		<p>
-			Participação em projetos educacionais com foco em performance e
-			interatividade.
+			Atuação na construção de uma plataforma educacional com conteúdo dinâmico
+			e editor rico.
 		</p>
 
 		<p>
-			<strong>Principais realizações:</strong>
-		</p>
-
-		<p>
-			<strong>📝 Editor Markdown WYSIWYG - Kderno</strong>
+			<strong>✍️ Plataforma de Conteúdo Dinâmico (Kderno)</strong>
 		</p>
 		<ul>
-			<li>Editor com preview ao vivo e plugins customizáveis</li>
-			<li>Sistema de autosave e versionamento</li>
+			<li>Desenvolvi sistema completo de criação e renderização de conteúdo</li>
+			<li>Estruturei páginas dinâmicas com diferentes tipos de bloco</li>
+			<li>Trabalhei na evolução da arquitetura do frontend</li>
 		</ul>
 
 		<p>
-			<strong>🎯 Plataforma Educacional</strong>
+			<strong>🧩 Editor Rico & Markdown</strong>
 		</p>
 		<ul>
-			<li>Sistema de exercícios interativos e quizzes</li>
-			<li>Dashboard de acompanhamento para professores</li>
+			<li>Implementei editor baseado em blocos com markdown em tempo real</li>
+			<li>Modelei lógica de edição e composição de conteúdo</li>
+			<li>Permiti criação flexível de conteúdo estruturado</li>
 		</ul>
 
 		<p>
-			<strong>⚡ Performance</strong>
+			<strong>🚀 Renderização & Performance</strong>
 		</p>
 		<ul>
-			<li>Redução de 55% no tempo de carregamento</li>
-			<li>Otimizações de conteúdo e cache inteligente</li>
+			<li>Trabalhei na renderização de páginas com foco em performance</li>
+			<li>Estruturei conteúdo com suporte a SEO</li>
+			<li>Otimizei carregamento e organização do frontend</li>
 		</ul>
+
+		<p>
+			<strong>📈 Evolução Profissional</strong>
+
+			<ul>
+				<li>Evoluí de desenvolvedor júnior para pleno ao longo do projeto</li>
+				<li>Assumi responsabilidades crescentes na arquitetura frontend</li>
+				<li>Contribuí ativamente na evolução técnica da plataforma</li>
+			</ul>
+		</p>
 	</ContentPage>
 );
 

@@ -13,25 +13,42 @@ export const searchItems: SearchItem[] = [
 	{
 		id: "kderno",
 		title: "Kderno - Editor Markdown WYSIWYG",
-		description: "Editor markdown completo com preview ao vivo para plataforma educacional",
+		description:
+			"Editor markdown completo com preview ao vivo para plataforma educacional",
 		href: "/projects/kderno",
 		type: "project",
 		category: "Clipping CACD",
-		keywords: ["editor", "markdown", "wysiwyg", "educacional", "kderno", "clipping"]
+		keywords: [
+			"editor",
+			"markdown",
+			"wysiwyg",
+			"educacional",
+			"kderno",
+			"clipping"
+		]
 	},
 	{
 		id: "mentora-platform",
 		title: "Plataforma de Campeonatos Digitais",
-		description: "Interface completa para torneios de e-sports com integração Web3",
+		description:
+			"Interface completa para torneios de e-sports com integração Web3",
 		href: "/projects/mentora-platform",
 		type: "project",
 		category: "Mentora",
-		keywords: ["campeonatos", "e-sports", "web3", "blockchain", "metamask", "mentora"]
+		keywords: [
+			"campeonatos",
+			"e-sports",
+			"web3",
+			"blockchain",
+			"metamask",
+			"mentora"
+		]
 	},
 	{
 		id: "pmd-system",
 		title: "Sistema PMD - Planejamento e Monitoramento",
-		description: "Dashboard completo para gestão de projetos integrado ao SharePoint",
+		description:
+			"Dashboard completo para gestão de projetos integrado ao SharePoint",
 		href: "/projects/pmd-system",
 		type: "project",
 		category: "UOL",
@@ -44,34 +61,67 @@ export const searchItems: SearchItem[] = [
 		href: "/projects/autopilot-saas",
 		type: "project",
 		category: "AdSeleto",
-		keywords: ["autopilot", "saas", "marketing", "nextjs", "keycloak", "adseleto"]
+		keywords: [
+			"autopilot",
+			"saas",
+			"marketing",
+			"nextjs",
+			"keycloak",
+			"adseleto"
+		]
 	},
 	{
 		id: "conecta-platform",
 		title: "Plataforma Conecta",
-		description: "Evolução da plataforma principal para gestão de projetos sociais",
+		description:
+			"Evolução da plataforma principal para gestão de projetos sociais",
 		href: "/projects/conecta-platform",
 		type: "project",
 		category: "Incentiv",
-		keywords: ["conecta", "plataforma", "projetos sociais", "design system", "incentiv"]
+		keywords: [
+			"conecta",
+			"plataforma",
+			"projetos sociais",
+			"design system",
+			"incentiv"
+		]
 	},
 	{
 		id: "incentiv-design-system",
 		title: "Design System Incentiv",
-		description: "Biblioteca de componentes publicada no GitHub Packages para padronização",
-		href: "/projects/incentiv-design-system",
+		description:
+			"Biblioteca de componentes publicada no GitHub Packages para padronização",
+		href: "/projects/ds-incentiv",
 		type: "project",
 		category: "Incentiv",
-		keywords: ["design system", "github packages", "npm", "biblioteca", "componentes", "storybook", "incentiv"]
+		keywords: [
+			"design system",
+			"github packages",
+			"npm",
+			"biblioteca",
+			"componentes",
+			"storybook",
+			"incentiv"
+		]
 	},
 	{
 		id: "pipeline-receptivo",
 		title: "Pipeline Receptivo",
-		description: "Sistema de funil para grandes empresas com landing page e painel gerencial",
+		description:
+			"Sistema de funil para grandes empresas com landing page e painel gerencial",
 		href: "/projects/pipeline-receptivo",
 		type: "project",
 		category: "Incentiv",
-		keywords: ["pipeline", "receptivo", "funil", "landing page", "google", "suzano", "coca cola", "incentiv"]
+		keywords: [
+			"pipeline",
+			"receptivo",
+			"funil",
+			"landing page",
+			"google",
+			"suzano",
+			"coca cola",
+			"incentiv"
+		]
 	},
 	// Companies
 	{
@@ -81,12 +131,19 @@ export const searchItems: SearchItem[] = [
 		href: "/companies/incentiv",
 		type: "company",
 		category: "Empresa",
-		keywords: ["incentiv", "desenvolvedor front-end", "front-end", "design system", "projetos sociais"]
+		keywords: [
+			"incentiv",
+			"desenvolvedor front-end",
+			"front-end",
+			"design system",
+			"projetos sociais"
+		]
 	},
 	{
 		id: "adseleto",
 		title: "AdSeleto",
-		description: "Desenvolvedor Front-End Sênior - SaaS de automação de marketing",
+		description:
+			"Desenvolvedor Front-End Sênior - SaaS de automação de marketing",
 		href: "/companies/adseleto",
 		type: "company",
 		category: "Empresa",
@@ -99,7 +156,13 @@ export const searchItems: SearchItem[] = [
 		href: "/companies/uol",
 		type: "company",
 		category: "Empresa",
-		keywords: ["uol", "universo online", "senior", "sharepoint", "sistemas corporativos"]
+		keywords: [
+			"uol",
+			"universo online",
+			"senior",
+			"sharepoint",
+			"sistemas corporativos"
+		]
 	},
 	{
 		id: "mentora",
@@ -136,7 +199,15 @@ export const searchItems: SearchItem[] = [
 		href: "/about",
 		type: "page",
 		category: "Página",
-		keywords: ["sobre", "história", "trajetória", "pessoal", "taubaté", "ufop", "radar viral"]
+		keywords: [
+			"sobre",
+			"história",
+			"trajetória",
+			"pessoal",
+			"taubaté",
+			"ufop",
+			"radar viral"
+		]
 	},
 	{
 		id: "projects",
@@ -194,7 +265,9 @@ export const searchItemsByQuery = (query: string): SearchItem[] => {
 
 	return searchItems.filter((item) => {
 		const titleMatch = item.title.toLowerCase().includes(lowerQuery);
-		const descriptionMatch = item.description.toLowerCase().includes(lowerQuery);
+		const descriptionMatch = item.description
+			.toLowerCase()
+			.includes(lowerQuery);
 		const categoryMatch = item.category?.toLowerCase().includes(lowerQuery);
 		const keywordsMatch = item.keywords?.some((keyword) =>
 			keyword.toLowerCase().includes(lowerQuery)

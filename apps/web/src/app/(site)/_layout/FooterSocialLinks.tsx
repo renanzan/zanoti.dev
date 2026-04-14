@@ -1,9 +1,8 @@
 "use client";
 
-import GithubIcon from "@/public/icons/sites/github.svg";
-import TwitterIcon from "@/public/icons/sites/twitter.svg";
 import clsx from "clsx";
 import posthog from "posthog-js";
+import { FaGithub, FaTwitter } from "react-icons/fa";
 
 export const FooterSocialLinks = () => (
 	<ul className={clsx("-ml-2 flex gap-1")}>
@@ -23,7 +22,7 @@ export const FooterSocialLinks = () => (
 					})
 				}
 			>
-				<TwitterIcon className="h-5 w-5 text-slate-700 dark:text-slate-300" />
+				<FaTwitter className="h-5 w-5 text-slate-700 dark:text-slate-300" />
 			</a>
 		</li>
 		<li>
@@ -42,7 +41,7 @@ export const FooterSocialLinks = () => (
 					})
 				}
 			>
-				<GithubIcon className="h-5 w-5 text-slate-700 dark:text-slate-300" />
+				<FaGithub className="h-5 w-5 text-slate-700 dark:text-slate-300" />
 			</a>
 		</li>
 	</ul>

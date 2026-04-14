@@ -1,7 +1,7 @@
-import { footerInfo } from "@/constants/info";
-import { learnLinks, workLinks } from "@/constants/links";
 import clsx from "clsx";
 import Link from "next/link";
+import { footerInfo } from "@/constants/info";
+import { learnLinks, workLinks } from "@/constants/links";
 
 import { FooterGithubLink } from "./FooterGithubLink";
 import { FooterSocialLinks } from "./FooterSocialLinks";
@@ -100,8 +100,9 @@ const FooterDescription: FC = () => (
 const Footer: FC = () => (
 	<footer
 		className={clsx(
-			"background-grid background-grid--fade-in border-divider-light mt-24 pt-16 text-sm text-slate-900",
-			"dark:border-divider-dark dark:text-slate-200"
+			"background-grid background-grid--fade-in border-divider-light pt-16 text-sm text-slate-900",
+			"dark:border-divider-dark dark:text-slate-200",
+			"lg:mt-24"
 		)}
 	>
 		<div className={clsx("content-wrapper")}>

@@ -11,9 +11,13 @@ export const headerInfo = {
 	),
 	description: (
 		<>
-			<strong>Desenvolvedor Front-End</strong> especializado em modernizar
-			sistemas legados
-			<br />e liderar equipes para construir soluções escaláveis e eficientes.
+			<strong>Desenvolvedor Front-End Sênior</strong> com foco em arquitetura e
+			escalabilidade
+			<br />
+			<br />
+			Atuo na construção e evolução de sistemas complexos, estruturando
+			aplicações escaláveis com React, Next.js e TypeScript, com foco em design
+			systems e arquitetura multi-tenant
 		</>
 	)
 };
@@ -25,32 +29,32 @@ export const highlightCards = [
 			Component: SparklesIcon
 		},
 		title: "Migração de Sistemas Legados",
-		desc: "5+ anos transformando sistemas antigos em soluções modernas. Experiência comprovada na UOL e Incentiv, com migrações sem interrupção do negócio."
+		desc: "Atuo na modernização de sistemas complexos, reduzindo acoplamento e reorganizando a arquitetura para permitir evolução contínua sem comprometer o negócio"
 	},
 	{
 		icon: {
 			className: "bg-pink-300 dark:bg-pink-900",
 			Component: HeartIcon
 		},
-		title: "Design Systems & Liderança",
-		desc: "Criação de design systems que aceleram desenvolvimento em 60%. Liderança de equipes de 4+ desenvolvedores com foco em qualidade e produtividade."
+		title: "Design Systems & Monorepo",
+		desc: "Estruturo design systems e bibliotecas compartilhadas com publicação de pacotes, garantindo consistência entre aplicações e escalabilidade em ambientes multi-produto"
 	},
 	{
 		icon: {
 			className: "bg-sky-300 dark:bg-sky-900",
 			Component: CodeIcon
 		},
-		title: "Arquitetura Frontend",
-		desc: "Especialista em React, TypeScript e Next.js. Experiência em sistemas corporativos, Web3 e aplicações de alta performance com melhorias de até 70%."
+		title: "TypeScript Avançado & Modelagem",
+		desc: "Utilizo TypeScript como ferramenta de modelagem para reduzir complexidade, aumentar previsibilidade e melhorar a experiência do desenvolvedor em sistemas complexos"
 	}
 ];
 
 export const footerInfo = {
 	aboutMe: (
 		<>
-			Sou Renan Zanoti, <b>Desenvolvedor Front-End</b> especializado em
-			modernizar sistemas legados e liderar equipes para construir soluções
-			escaláveis e eficientes.
+			Sou Renan Zanoti, <b>Desenvolvedor Frontend Sênior</b> focado em
+			arquitetura e sistemas complexos, com atuação em escalabilidade, qualidade
+			de código e evolução de sistemas.
 		</>
 	)
 };

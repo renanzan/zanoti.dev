@@ -1,137 +1,84 @@
-import ContentPage from "@/components/ContentPage";
 import { H2, H3 } from "@/components/content/Heading";
 import { Hr } from "@/components/content/Hr";
+import ContentPage from "@/components/ContentPage";
 import { generateMetadata } from "@/helpers/seo";
 
 const frontMatter = {
 	title: "E.D.H",
 	description:
-		"Estudos de Hoje - Aprendizado contínuo em migração de sistemas legados e liderança técnica.",
+		"Evolução contínua em arquitetura frontend, com foco em escalabilidade, padronização e tomada de decisão em sistemas complexos.",
 	caption: "Aprendizado"
 };
 
 export const metadata = generateMetadata({
 	title: "E.D.H - Estudos de Hoje",
 	description:
-		"Estudos diários de Renan Zanoti sobre desenvolvimento frontend, React, TypeScript, Next.js e tecnologias web. Compartilhando conhecimento e aprendizado contínuo.",
+		"Aprendizado contínuo focado em evolução de arquitetura frontend, escalabilidade de sistemas e liderança técnica.",
 	path: "/today-studies"
 });
 
 const Page = () => (
 	<ContentPage frontMatter={frontMatter}>
 		<p>
-			Aprendizado contínuo para manter expertise em{" "}
-			<strong>migração de sistemas legados</strong> e{" "}
-			<strong>liderança técnica</strong>.
+			Consolidação e aprofundamento das práticas aplicadas no dia a dia,
+			evoluindo decisões técnicas em projetos com múltiplas aplicações, regras
+			complexas e necessidade de escala.
 		</p>
+
+		<Hr />
+
+		<H2>Stack Consolidada</H2>
+
+		<ul>
+			<li>Next.js (App Router) aplicado em produção</li>
+			<li>Estruturação de monorepos para múltiplas aplicações</li>
+			<li>Design systems com publicação de pacotes</li>
+			<li>Arquitetura frontend para sistemas escaláveis</li>
+			<li>TypeScript aplicado à modelagem de domínio</li>
+		</ul>
 
 		<Hr />
 
 		<H2>Foco Atual</H2>
 
+		<H3>Arquitetura em Escala</H3>
+
+		<ul>
+			<li>Decisões de arquitetura em sistemas multi-produto</li>
+			<li>Organização de código para crescimento sustentável</li>
+			<li>Separação de responsabilidades entre aplicações</li>
+			<li>Redução de acoplamento e complexidade</li>
+		</ul>
+
 		<H3>Liderança Técnica</H3>
 
 		<ul>
-			<li>Gestão de equipes de desenvolvimento front-end</li>
-			<li>Mentoria técnica e code reviews</li>
-			<li>Arquitetura de software em projetos complexos</li>
-			<li>Comunicação técnica com stakeholders</li>
+			<li>Evolução de padrões técnicos em equipes</li>
+			<li>Mentoria e desenvolvimento de outros desenvolvedores</li>
+			<li>Revisão de código com foco em consistência</li>
+			<li>Comunicação técnica em diferentes níveis</li>
 		</ul>
 
-		<H3>Migração de Sistemas Legados</H3>
+		<H3>Sistemas Legados</H3>
 
 		<ul>
-			<li>Estratégias de migração sem interrupção do negócio</li>
-			<li>Planejamento gradual e validação contínua</li>
-			<li>Integração com sistemas existentes</li>
-			<li>Treinamento de equipes para novas tecnologias</li>
+			<li>Estratégias de modernização incremental</li>
+			<li>Evolução de sistemas sem interrupção</li>
+			<li>Integração com tecnologias existentes</li>
+			<li>Balanceamento entre inovação e estabilidade</li>
 		</ul>
 
-		<Hr />
-
-		<H2>Tecnologias em Exploração</H2>
-
-		<H3>Next.js 15 & App Router</H3>
+		<H3>Developer Experience & Qualidade de Código</H3>
 
 		<ul>
-			<li>Server Components — Performance e SEO</li>
-			<li>Streaming e Suspense — UX otimizada</li>
-			<li>Edge Functions — Funcionalidades serverless</li>
-			<li>Turbopack — Build tooling mais rápido</li>
+			<li>Redução de complexidade cognitiva e estrutural em bases de código</li>
+			<li>
+				Melhoria da legibilidade e previsibilidade na evolução de sistemas
+			</li>
+			<li>Estruturação de código para facilitar manutenção e onboarding</li>
+			<li>Definição de padrões que reduzem fricção no desenvolvimento</li>
+			<li>Evolução contínua da experiência do desenvolvedor (DX)</li>
 		</ul>
-
-		<H3>Web3 & Blockchain</H3>
-
-		<ul>
-			<li>Smart Contracts — Integração frontend</li>
-			<li>Web3.js/Ethers.js — Bibliotecas blockchain</li>
-			<li>DeFi — Aplicações financeiras descentralizadas</li>
-			<li>Segurança Web3 — Boas práticas</li>
-		</ul>
-
-		<Hr />
-
-		<H2>Performance & Otimização</H2>
-
-		<ul>
-			<li>Core Web Vitals — Métricas essenciais</li>
-			<li>Bundle Optimization — Redução de tamanho</li>
-			<li>Lazy Loading — Carregamento sob demanda</li>
-			<li>Caching Strategies — Tempo de resposta</li>
-		</ul>
-
-		<Hr />
-
-		<H2>Próximos Estudos</H2>
-
-		<H3>Tecnologias Emergentes</H3>
-
-		<ul>
-			<li>AI/ML no Frontend — Integração de IA</li>
-			<li>WebAssembly — Performance nativa</li>
-			<li>Micro-frontends — Arquitetura escalável</li>
-			<li>Progressive Web Apps — Experiência nativa</li>
-		</ul>
-
-		<H3>Soft Skills</H3>
-
-		<ul>
-			<li>Comunicação técnica — Apresentações</li>
-			<li>Mentoria — Desenvolvimento de equipes</li>
-			<li>Gestão de tempo — Produtividade</li>
-			<li>Networking — Relacionamentos profissionais</li>
-		</ul>
-
-		<Hr />
-
-		<H2>Metas 2024</H2>
-
-		<H3>Q1-Q2</H3>
-
-		<ul>
-			<li>[ ] Dominar Next.js 15 e App Router</li>
-			<li>[ ] Implementar testes automatizados</li>
-			<li>[ ] Melhorar habilidades de mentoria</li>
-			<li>[ ] Explorar WebAssembly</li>
-		</ul>
-
-		<H3>Q3-Q4</H3>
-
-		<ul>
-			<li>[ ] Design system open source</li>
-			<li>[ ] Aplicação Web3 completa</li>
-			<li>[ ] Expertise em arquitetura de software</li>
-			<li>[ ] Contribuições open source</li>
-		</ul>
-
-		<Hr />
-
-		<p>
-			<em>
-				Atualizado regularmente conforme evoluem meus estudos e experiências
-				profissionais.
-			</em>
-		</p>
 	</ContentPage>
 );
 

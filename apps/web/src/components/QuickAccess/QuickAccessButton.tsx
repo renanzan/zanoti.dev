@@ -1,9 +1,9 @@
 "use client";
 
-import Kbd from "@/components/Kbd";
-import QuickAccessIcon from "@/public/icons/quick-access.svg";
 import clsx from "clsx";
 import posthog from "posthog-js";
+import Kbd from "@/components/Kbd";
+import QuickAccessIcon from "@/public/icons/quick-access.svg";
 
 import { useQuickAccess } from "./QuickAccessContext";
 
@@ -34,7 +34,7 @@ function QuickAccessButton() {
 					"dark:font-normal"
 				)}
 			>
-				Quick Access
+				Acesso Rápido
 				<Kbd>Q</Kbd>
 			</div>
 		</button>

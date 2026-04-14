@@ -14,90 +14,64 @@ type ThemeContextType = {
 
 const ThemeContext = createContext({} as ThemeContextType);
 
+// Helper para calcular o tema resolvido
+const getResolvedTheme = (theme: Theme): "light" | "dark" => {
+	if (theme === "system") {
+		return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+	}
+	return theme;
+};
+
+// Helper para aplicar tema no DOM
+const applyTheme = (theme: "light" | "dark") => {
+	const root = document.documentElement;
+	root.classList.remove("light", "dark");
+	root.classList.add(theme);
+};
+
 const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
 	const [theme, setTheme] = useState<Theme>("system");
 	const [resolvedTheme, setResolvedTheme] = useState<"light" | "dark">("light");
 	const [mounted, setMounted] = useState(false);
 
-	// Carregar tema salvo do localStorage
+	// Sincronizar com o tema já aplicado pelo script inline
 	useEffect(() => {
-		const savedTheme = localStorage.getItem("theme") as Theme;
-		if (savedTheme && ["light", "dark", "system"].includes(savedTheme)) {
+		const savedTheme = (localStorage.getItem("theme") as Theme) || "system";
+		if (["light", "dark", "system"].includes(savedTheme)) {
 			setTheme(savedTheme);
 		}
 		
-		// Verificar tema já aplicado pelo script inline (para evitar re-aplicação)
+		// Ler o tema já aplicado pelo script inline
 		const root = document.documentElement;
 		const currentTheme = root.classList.contains("dark") ? "dark" : "light";
-		
-		// Só aplicar se ainda não estiver aplicado (fallback de segurança)
-		if (!root.classList.contains("light") && !root.classList.contains("dark")) {
-			let initialTheme: "light" | "dark";
-			if (savedTheme === "system" || !savedTheme) {
-				const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-				initialTheme = systemPrefersDark ? "dark" : "light";
-			} else {
-				initialTheme = savedTheme;
-			}
-			
-			root.classList.add(initialTheme);
-			setResolvedTheme(initialTheme);
-		} else {
-			setResolvedTheme(currentTheme);
-		}
-		
+		setResolvedTheme(currentTheme);
 		setMounted(true);
 	}, []);
 
-	// Aplicar tema ao documento
+	// Aplicar tema quando mudar
 	useEffect(() => {
 		if (!mounted) return;
 		
-		const root = document.documentElement;
-		
-		// Remover classes anteriores
-		root.classList.remove("light", "dark");
-		
-		let actualTheme: "light" | "dark";
-		
-		if (theme === "system") {
-			// Detectar preferência do sistema
-			const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-			actualTheme = systemPrefersDark ? "dark" : "light";
-		} else {
-			actualTheme = theme;
-		}
-		
-		// Aplicar classe ao documento
-		root.classList.add(actualTheme);
+		const actualTheme = getResolvedTheme(theme);
+		applyTheme(actualTheme);
 		setResolvedTheme(actualTheme);
-		
-		// Debug log
-		console.log(`Tema aplicado: ${actualTheme} (configuração: ${theme})`);
-		
-		// Salvar no localStorage
 		localStorage.setItem("theme", theme);
 	}, [theme, mounted]);
 
 	// Escutar mudanças na preferência do sistema
 	useEffect(() => {
-		if (theme === "system") {
-			const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-			
-			const handleChange = () => {
-				const root = document.documentElement;
-				root.classList.remove("light", "dark");
-				
-				const actualTheme = mediaQuery.matches ? "dark" : "light";
-				root.classList.add(actualTheme);
-				setResolvedTheme(actualTheme);
-			};
-			
-			mediaQuery.addEventListener("change", handleChange);
-			return () => mediaQuery.removeEventListener("change", handleChange);
-		}
-		return undefined;
-	}, [theme]);
+		if (theme !== "system" || !mounted) return;
+		
+		const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+		const handleChange = () => {
+			const actualTheme = getResolvedTheme("system");
+			applyTheme(actualTheme);
+			setResolvedTheme(actualTheme);
+		};
+		
+		mediaQuery.addEventListener("change", handleChange);
+		return () => mediaQuery.removeEventListener("change", handleChange);
+	}, [theme, mounted]);
 
 	const value = {
 		theme,

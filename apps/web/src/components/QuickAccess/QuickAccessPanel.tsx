@@ -1,11 +1,11 @@
 "use client";
 
+import { useEffect, useMemo, useRef, useState } from "react";
 import clsx from "clsx";
 import { useRouter } from "next/navigation";
-import { useEffect, useMemo, useRef, useState } from "react";
 import posthog from "posthog-js";
-
 import { getSearchItemIcon, searchItemsByQuery } from "@/constants/search";
+
 import { useQuickAccess } from "./QuickAccessContext";
 
 function QuickAccessPanel() {
@@ -33,7 +33,10 @@ function QuickAccessPanel() {
 	// Fechar o painel quando clicar fora dele
 	useEffect(() => {
 		const handleClickOutside = (event: MouseEvent) => {
-			if (panelRef.current && !panelRef.current.contains(event.target as Node)) {
+			if (
+				panelRef.current &&
+				!panelRef.current.contains(event.target as Node)
+			) {
 				setOpen(false);
 				setQuery("");
 			}
@@ -66,7 +69,11 @@ function QuickAccessPanel() {
 		};
 	}, [isOpen, setOpen]);
 
-	const handleItemClick = (href: string, itemTitle?: string, source?: string) => {
+	const handleItemClick = (
+		href: string,
+		itemTitle?: string,
+		source?: string
+	) => {
 		posthog.capture("quick_access_item_selected", {
 			destination: href,
 			item_title: itemTitle,
@@ -93,7 +100,7 @@ function QuickAccessPanel() {
 		<div className="fixed inset-0 z-[9999] flex items-start justify-center pt-20">
 			{/* Overlay */}
 			<div className="absolute inset-0 bg-black/20 backdrop-blur-sm" />
-			
+
 			{/* Panel */}
 			<div
 				ref={panelRef}
@@ -106,12 +113,12 @@ function QuickAccessPanel() {
 				{/* Header */}
 				<div className="flex items-center justify-between p-6 border-b border-slate-200 dark:border-slate-700">
 					<h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
-						Quick Access
+						Acesso Rápido
 					</h2>
 					<button
 						onClick={() => setOpen(false)}
 						className="p-1 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
-						aria-label="Fechar Quick Access"
+						aria-label="Fechar Acesso Rápido"
 					>
 						<svg
 							className="w-5 h-5 text-slate-500 dark:text-slate-400"
@@ -169,13 +176,21 @@ function QuickAccessPanel() {
 								{searchResults.length > 0 ? (
 									<>
 										<div className="text-xs font-medium text-slate-500 dark:text-slate-400 px-2">
-											{searchResults.length} resultado{searchResults.length !== 1 ? "s" : ""} encontrado{searchResults.length !== 1 ? "s" : ""}
+											{searchResults.length} resultado
+											{searchResults.length !== 1 ? "s" : ""} encontrado
+											{searchResults.length !== 1 ? "s" : ""}
 										</div>
 										<div className="space-y-1">
 											{searchResults.map((item) => (
 												<button
 													key={item.id}
-													onClick={() => handleItemClick(item.href, item.title, "search_results")}
+													onClick={() =>
+														handleItemClick(
+															item.href,
+															item.title,
+															"search_results"
+														)
+													}
 													className={clsx(
 														"w-full text-left p-3 rounded-lg transition-colors",
 														"hover:bg-slate-100 dark:hover:bg-slate-700",
@@ -209,7 +224,9 @@ function QuickAccessPanel() {
 								) : (
 									<div className="text-center py-8 text-slate-500 dark:text-slate-400">
 										<div className="text-sm">Nenhum resultado encontrado</div>
-										<div className="text-xs mt-1">Tente buscar por projetos, empresas ou páginas</div>
+										<div className="text-xs mt-1">
+											Tente buscar por projetos, empresas ou páginas
+										</div>
 									</div>
 								)}
 							</div>
@@ -235,6 +252,17 @@ function QuickAccessPanel() {
 											</div>
 										</button>
 										<button
+											onClick={() => handleItemClick("/about", "Sobre")}
+											className="p-3 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 transition-colors text-left"
+										>
+											<div className="text-sm font-medium text-slate-900 dark:text-slate-100">
+												Sobre
+											</div>
+											<div className="text-xs text-slate-500 dark:text-slate-400">
+												Quem sou eu
+											</div>
+										</button>
+										<button
 											onClick={() => handleItemClick("/projects", "Projetos")}
 											className="p-3 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 transition-colors text-left"
 										>
@@ -246,7 +274,20 @@ function QuickAccessPanel() {
 											</div>
 										</button>
 										<button
-											onClick={() => handleItemClick("/work/experience", "Experiência")}
+											onClick={() => handleItemClick("/blog", "Blog")}
+											className="p-3 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 transition-colors text-left"
+										>
+											<div className="text-sm font-medium text-slate-900 dark:text-slate-100">
+												Blog
+											</div>
+											<div className="text-xs text-slate-500 dark:text-slate-400">
+												Artigos e posts
+											</div>
+										</button>
+										<button
+											onClick={() =>
+												handleItemClick("/work/experience", "Experiência")
+											}
 											className="p-3 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 transition-colors text-left"
 										>
 											<div className="text-sm font-medium text-slate-900 dark:text-slate-100">
@@ -257,7 +298,9 @@ function QuickAccessPanel() {
 											</div>
 										</button>
 										<button
-											onClick={() => handleItemClick("/work/skills", "Habilidades")}
+											onClick={() =>
+												handleItemClick("/work/skills", "Habilidades")
+											}
 											className="p-3 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 transition-colors text-left"
 										>
 											<div className="text-sm font-medium text-slate-900 dark:text-slate-100">
@@ -268,7 +311,9 @@ function QuickAccessPanel() {
 											</div>
 										</button>
 										<button
-											onClick={() => handleItemClick("/work/contact", "Contato")}
+											onClick={() =>
+												handleItemClick("/work/contact", "Contato")
+											}
 											className="p-3 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 transition-colors text-left"
 										>
 											<div className="text-sm font-medium text-slate-900 dark:text-slate-100">
@@ -278,11 +323,22 @@ function QuickAccessPanel() {
 												Entre em contato
 											</div>
 										</button>
+										<button
+											onClick={() => handleItemClick("/today-studies", "E.D.H")}
+											className="p-3 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 transition-colors text-left"
+										>
+											<div className="text-sm font-medium text-slate-900 dark:text-slate-100">
+												E.D.H
+											</div>
+											<div className="text-xs text-slate-500 dark:text-slate-400">
+												Estudos de Hoje
+											</div>
+										</button>
 									</div>
 								</div>
 
-								{/* Keyboard Shortcuts */}
-								<div className="space-y-2">
+								{/* Keyboard Shortcuts - Apenas em desktop */}
+								<div className="hidden md:block space-y-2">
 									<h3 className="text-sm font-medium text-slate-700 dark:text-slate-300">
 										Atalhos de Teclado
 									</h3>
@@ -294,7 +350,7 @@ function QuickAccessPanel() {
 											</kbd>
 										</div>
 										<div className="flex items-center justify-between">
-											<span>Abrir Quick Access</span>
+											<span>Abrir Acesso Rápido</span>
 											<kbd className="px-2 py-1 bg-slate-200 dark:bg-slate-700 rounded text-xs">
 												Q
 											</kbd>

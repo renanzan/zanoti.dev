@@ -1,9 +1,9 @@
 "use client";
 
-import { headerInfo } from "@/constants/info";
 import clsx from "clsx";
 import { m, useAnimationControls } from "framer-motion";
 import Image from "next/image";
+import { headerInfo } from "@/constants/info";
 
 const animation = {
 	hide: { x: -32, opacity: 0 },
@@ -14,7 +14,7 @@ export const HeroTitle = () => {
 	const controls = useAnimationControls();
 
 	return (
-		<div className="relative z-10">
+		<div className="relative z-10 max-w-[800px]">
 			<m.div
 				initial={animation.hide}
 				animate={animation.show}
@@ -22,7 +22,8 @@ export const HeroTitle = () => {
 			>
 				<div
 					className={clsx(
-						"mb-1 flex items-center gap-1 text-2xl text-slate-600",
+						"mb-1 flex items-center gap-1 text-xl text-slate-600",
+						"sm:text-2xl",
 						"md:mb-0 md:gap-2 md:text-4xl",
 						"dark:text-slate-400"
 					)}
@@ -44,7 +45,7 @@ export const HeroTitle = () => {
 						}}
 					>
 						<Image
-							className={clsx("w-7 md:w-10")}
+							className={clsx("w-6 sm:w-7 md:w-10")}
 							alt="Love-you Gesture"
 							src="/emojis/love-you-gesture.png"
 							width={48}
@@ -70,7 +71,8 @@ export const HeroTitle = () => {
 				>
 					<span
 						className={clsx(
-							"mb-4 block text-[2.5rem] font-[1000] leading-none",
+							"mb-4 block text-[2rem] font-[1000] leading-tight",
+							"sm:text-[2.5rem] sm:leading-none",
 							"md:mb-6 md:text-7xl"
 						)}
 					>
@@ -84,7 +86,8 @@ export const HeroTitle = () => {
 				>
 					<span
 						className={clsx(
-							"block text-base text-slate-600",
+							"block text-sm text-slate-600",
+							"sm:text-base",
 							"md:text-xl",
 							"dark:text-slate-400"
 						)}

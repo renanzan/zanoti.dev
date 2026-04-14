@@ -1,5 +1,4 @@
-import GithubIcon from "@/public/icons/sites/github.svg";
-import TwitterIcon from "@/public/icons/sites/twitter.svg";
+import { FaGithub, FaTwitter } from "react-icons/fa";
 
 export const workLinks = [
 	{ title: "Habilidades", href: "/work/skills" },
@@ -18,9 +17,9 @@ export const socialLinks = [
 	{
 		title: "Twitter",
 		href: "https://twitter.com/renan_zanoti",
-		Icon: TwitterIcon
+		Icon: FaTwitter
 	},
-	{ title: "GitHub", href: "https://github.com/renanzan", Icon: GithubIcon }
+	{ title: "GitHub", href: "https://github.com/renanzan", Icon: FaGithub }
 ];
 
 export const learnLinks = [

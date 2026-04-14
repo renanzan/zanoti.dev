@@ -1,18 +1,11 @@
 "use client";
 
+import { ArrowLeft, Building, Calendar, ExternalLink } from "lucide-react";
+import Link from "next/link";
 import { H2, H3 } from "@/components/content/Heading";
 import ContentPage from "@/components/ContentPage";
 import { getCompanyById } from "@/constants/companies";
 import { getProjectsByCompany } from "@/constants/projects";
-import {
-	ArrowLeft,
-	Building,
-	Calendar,
-	ExternalLink,
-	MapPin,
-	Users
-} from "lucide-react";
-import Link from "next/link";
 
 export default function UOLCompanyPage() {
 	const company = getCompanyById("uol");
@@ -49,10 +42,6 @@ export default function UOLCompanyPage() {
 						<span>{company.period}</span>
 					</div>
 					<div className="flex items-center gap-2">
-						<MapPin className="w-4 h-4" />
-						<span>{company.location}</span>
-					</div>
-					<div className="flex items-center gap-2">
 						<Building className="w-4 h-4" />
 						<span>{company.industry}</span>
 					</div>
@@ -67,47 +56,32 @@ export default function UOLCompanyPage() {
 							Website
 						</a>
 					)}
+					{company.linkedin && (
+						<a
+							href={company.linkedin}
+							target="_blank"
+							rel="noopener noreferrer"
+							className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+						>
+							<ExternalLink className="w-4 h-4" />
+							Linkedin
+						</a>
+					)}
 				</div>
 			</div>
 
-			{/* Company Info */}
-			<div className="grid md:grid-cols-2 gap-8 mb-8">
+			{/* Product Context & Technical Challenge */}
+			<div className="flex flex-col gap-8 mb-8">
 				<div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-6">
-					<H3>Informações da Empresa</H3>
-					<ul>
-						{company.teamSize && (
-							<li className="flex items-center gap-3 mb-3">
-								<Users className="w-5 h-5 text-slate-500 flex-shrink-0" />
-								<span>
-									<strong>Equipe:</strong> {company.teamSize}
-								</span>
-							</li>
-						)}
-						<li className="flex items-center gap-3 mb-3">
-							<Building className="w-5 h-5 text-slate-500 flex-shrink-0" />
-							<span>
-								<strong>Setor:</strong> {company.industry}
-							</span>
-						</li>
-						<li className="flex items-center gap-3">
-							<MapPin className="w-5 h-5 text-slate-500 flex-shrink-0" />
-							<span>
-								<strong>Localização:</strong> {company.location}
-							</span>
-						</li>
-					</ul>
+					<H3>Contexto do Produto</H3>
+
+					<p>{company.productContext}</p>
 				</div>
 
 				<div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-6">
-					<H3>Meu Papel</H3>
-					<ul>
-						<li className="mb-3">
-							<strong>Cargo:</strong> {company.role}
-						</li>
-						<li>
-							<strong>Período:</strong> {company.period}
-						</li>
-					</ul>
+					<H3>Desafio Técnico</H3>
+
+					<p>{company.technicalChallenge}</p>
 				</div>
 			</div>
 

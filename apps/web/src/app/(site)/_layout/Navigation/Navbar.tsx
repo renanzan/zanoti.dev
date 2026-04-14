@@ -39,18 +39,21 @@ export const Navbar = () => {
 						"md:px-4"
 					)}
 				>
-					<nav className={clsx("flex", "md:gap-2")} data-accent="violet">
+					<nav className={clsx("flex gap-1", "sm:gap-2", "md:gap-2")} data-accent="violet">
 						<Link
 							href="/"
-							className="flex h-9 items-center gap-2 rounded-xl px-2"
+							className={clsx(
+								"flex h-9 items-center gap-1 rounded-xl px-1.5",
+								"sm:gap-2 sm:px-2"
+							)}
 							aria-label="Home"
 						>
 							<Logo className="text-slate-700 dark:text-accent-400/40" />
 						</Link>
 
-						<ul className={clsx("flex items-center", "md:gap-1")}>
+						<ul className={clsx("flex items-center gap-0.5", "sm:gap-1", "md:gap-1")}>
 							{pageLinks.map(({ title, href }) => (
-								<li key={title}>
+								<li key={title} className={clsx("hidden", "sm:block")}>
 									<Link key={title} href={href} className="nav-link">
 										{title}
 									</Link>

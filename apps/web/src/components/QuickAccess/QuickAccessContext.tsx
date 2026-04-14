@@ -15,7 +15,7 @@ const QuickAccessContext = createContext({} as QuickAccessContextType);
 const QuickAccessProvider: FC<PropsWithChildren> = ({ children }) => {
 	const [isOpen, setOpen] = useState(false);
 
-	// Adicionar atalho de teclado para abrir o Quick Access
+	// Adicionar atalho de teclado para abrir o Acesso Rápido
 	useEffect(() => {
 		const handleKeyDown = (event: KeyboardEvent) => {
 			// Só ativar se não estiver digitando em um input/textarea
@@ -29,7 +29,9 @@ const QuickAccessProvider: FC<PropsWithChildren> = ({ children }) => {
 			) {
 				event.preventDefault();
 				setOpen(true);
-				posthog.capture("quick_access_opened", { trigger: "keyboard_shortcut" });
+				posthog.capture("quick_access_opened", {
+					trigger: "keyboard_shortcut"
+				});
 			}
 		};
 
